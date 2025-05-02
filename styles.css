@@ -166,7 +166,8 @@ body {
     overflow-x: auto !important;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    max-width: 100%;
   }
 
   /* Tamaño por defecto para móviles */
@@ -199,6 +200,11 @@ mjx-container {
     .menu-toggle {
       font-size: 1.5rem;
     }
+  }
+
+  .formula {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   
