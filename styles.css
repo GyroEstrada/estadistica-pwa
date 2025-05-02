@@ -161,11 +161,12 @@ body {
     text-decoration: underline;
   }
   
-  .formula {
-    overflow-x: auto;
+  .formula mjx-container {
+    display: block !important;
+    overflow-x: auto !important;
     overflow-y: hidden;
-    max-width: 100%;
-    padding: 0.5rem 0;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
   }
 
   /* Tamaño por defecto para móviles */
@@ -177,6 +178,26 @@ mjx-container {
   @media screen and (min-width: 768px) {
     mjx-container {
       font-size: 1.4em;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    header {
+      height: 60px;
+      padding: 0.5rem 1rem;
+    }
+  
+    header h1 {
+      font-size: 1.1rem;
+      margin: 0 0 0 0.5rem;
+    }
+  
+    .logo {
+      width: 36px;
+    }
+  
+    .menu-toggle {
+      font-size: 1.5rem;
     }
   }
 
