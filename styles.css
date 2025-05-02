@@ -179,3 +179,13 @@ mjx-container {
       font-size: 1.4em;
     }
   }
+
+  mjx-container.grande {
+    font-size: 1.8em;
+  }
+  
+  @media screen and (max-width: 600px) {
+    mjx-container.grande {
+      font-size: 1.1em;
+    }
+  }
