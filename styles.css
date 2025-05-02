@@ -92,6 +92,8 @@ main {
 body {
   margin: 0;
   padding: 0;
+  word-wrap: break-word;
+  overflow-x: hidden;
 }
 
 .info-box {
@@ -157,4 +159,11 @@ body {
   
   .titulo-link:hover {
     text-decoration: underline;
+  }
+  
+  .formula {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 0.5rem 0;
   }
