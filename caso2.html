@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso 2 - Razón de Varianzas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+  <!-- Overlay y menú -->
+  <div id="overlay-bg" class="overlay-bg" onclick="closeSidebar()"></div>
+
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="caso1.html">Caso 1: Diferencia de medias</a></li>
+      <li><a href="caso2.html">Caso 2: Razón de varianza</a></li>
+    </ul>
+  </nav>
+
+  <!-- Encabezado -->
+  <header>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <h1><a href="index.html" class="titulo-link">Proyecto Final Estadística</a></h1>
+    <img src="icons/UmgLogo.png" alt="Logo UMG" class="logo" />
+  </header>
+
+  <!-- Contenido -->
+  <main>
+
+    <!-- Enunciado -->
+    <section class="info-box">
+      <h2>Enunciado del problema</h2>
+      <p>
+        Se llevó a cabo un estudio para comparar la efectividad de dos métodos de enseñanza de la lectura en estudiantes de primer grado en Santiago de Chile. Se seleccionaron aleatoriamente dos grupos de estudiantes:
+        <br><br>
+        • Grupo 1 (Método Tradicional): 97 estudiantes<br>
+        • Grupo 2 (Método Equilibrado): 97 estudiantes<br><br>
+        Al final del semestre, todos realizaron el mismo examen estandarizado. Se obtuvieron las siguientes varianzas muestrales:<br><br>
+        • Varianza del Grupo 1: \( s_1^2 = 75.2 \)<br>
+        • Varianza del Grupo 2: \( s_2^2 = 38.9 \)<br><br>
+        ¿Existe evidencia estadística para concluir que la variabilidad en los puntajes es diferente entre ambos métodos de enseñanza con un nivel de significancia \( \alpha = 0.05 \)?
+      </p>
+    </section>
+
+    <!-- Análisis -->
+    <section class="info-box">
+      <h2>Análisis del problema</h2>
+      <p>
+        Como se desea comparar la variabilidad de los puntajes entre dos grupos, aplicaremos una prueba F para razón de varianzas. Esta prueba evalúa si existe una diferencia significativa en la dispersión de los datos. Es útil cuando se quiere saber si un grupo presenta mayor consistencia que otro, independientemente de las medias.
+      </p>
+    </section>
+
+    <!-- Resolución -->
+    <section class="info-box">
+      <h2>Resolución con fórmula</h2>
+      <p>La hipótesis nula es que ambas varianzas son iguales: \( H_0: \sigma_1^2 = \sigma_2^2 \)</p>
+      <p>La hipótesis alternativa es: \( H_a: \sigma_1^2 \neq \sigma_2^2 \)</p>
+      <p>Se utiliza la siguiente fórmula:</p>
+      <p style="text-align: center;">
+        \[
+        F = \frac{s_1^2}{s_2^2} = \frac{75.2}{38.9} \approx 1.9329
+        \]
+      </p>
+      <p>Este valor de F se compara contra valores críticos de la distribución F con \( df_1 = 96 \) y \( df_2 = 96 \).</p>
+    </section>
+
+    <!-- Conclusión -->
+    <section class="info-box">
+      <h2>Conclusión</h2>
+      <p>
+        Dado que \( F \approx 1.93 \), debemos compararlo con los valores críticos de una prueba bilateral al nivel \( \alpha = 0.05 \) y \( gl_1 = gl_2 = 96 \). El valor crítico aproximado es \( F_{0.025,96,96} \approx 1.60 \) y su recíproco \( \frac{1}{1.60} \approx 0.625 \).
+      </p>
+      <p>
+        Como \( 1.93 > 1.60 \), se encuentra en el área de rechazo. Por lo tanto, <strong>existe suficiente evidencia estadística para concluir que hay diferencia significativa en la variabilidad de los puntajes entre ambos métodos de enseñanza.</strong>
+      </p>
+    </section>
+
+    <!-- Módulo interactivo -->
+    <section class="info-box">
+      <h2>Experimenta con los datos</h2>
+      <p>Modifica los valores para calcular el valor de F:</p>
+      <form id="fForm">
+        <label>Varianza grupo 1: <input type="number" id="s1" value="75.2" required></label><br><br>
+        <label>Varianza grupo 2: <input type="number" id="s2" value="38.9" required></label><br><br>
+        <button type="button" onclick="calcularF()">Calcular F</button>
+      </form>
+      <p id="resultadoF"></p>
+    </section>
+
+  </main>
+
+  <!-- Botón subir -->
+  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>

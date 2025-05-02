@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso 1 - Diferencia de medias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+  <!-- Overlay y menú -->
+  <div id="overlay-bg" class="overlay-bg" onclick="closeSidebar()"></div>
+
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="caso1.html">Caso 1: Diferencia de medias</a></li>
+      <li><a href="caso2.html">Caso 2: Razón de varianza</a></li>
+    </ul>
+  </nav>
+
+  <!-- Encabezado -->
+  <header>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <h1><a href="index.html" class="titulo-link">Proyecto Final Estadística</a></h1>
+    <img src="icons/UmgLogo.png" alt="Logo UMG" class="logo" />
+  </header>
+
+  <!-- Contenido -->
+  <main>
+
+    <!-- Enunciado -->
+    <section class="info-box">
+      <h2>Enunciado del problema</h2>
+      <p>
+        Se analizaron los datos del <strong>Physicians' Health Study</strong> para determinar si la administración de aspirina en dosis bajas reduce la proporción de infartos de miocardio no fatales en hombres sanos.
+        Durante el estudio, un grupo de <strong>11,037 médicos</strong> tomó aspirina cada dos días, y se observaron <strong>139 infartos</strong> en este grupo.
+        Otro grupo de <strong>11,034 médicos</strong> tomó un placebo, y se registraron <strong>239 infartos</strong> en este grupo.
+      </p>
+    </section>
+
+    <!-- Análisis -->
+    <section class="info-box">
+      <h2>Análisis del problema</h2>
+      <p>
+        Este estudio compara dos grupos de médicos bajo diferentes condiciones: uno tomando aspirina y otro un placebo. Al calcular la diferencia de proporciones de infartos entre ambos grupos, se puede determinar si existe un efecto significativo del tratamiento. Esta diferencia se puede analizar mediante una prueba de hipótesis para diferencia de medias (en este caso, proporciones), ayudando a decidir si la reducción observada en infartos se debe al tratamiento o al azar.
+      </p>
+    </section>
+
+    <!-- Resolución -->
+    <section class="info-box">
+        <h2>Resolución con fórmula</h2>
+        <p>Se utiliza la fórmula para diferencia de medias:</p>
+        <p style="text-align: center;">
+          \[
+          z = \frac{\bar{x}_A - \bar{x}_B}{\sqrt{\frac{s_A^2}{n_A} + \frac{s_B^2}{n_B}}}
+          \]
+        </p>
+      
+        <p>Donde:</p>
+        <ul>
+          <li>\( \bar{x}_A = \frac{139}{11037} \approx 0.0126 \)</li>
+          <li>\( \bar{x}_B = \frac{239}{11034} \approx 0.0216 \)</li>
+          <li>\( s_A^2 = 0.0126(1 - 0.0126) \approx 0.0124 \)</li>
+          <li>\( s_B^2 = 0.0216(1 - 0.0216) \approx 0.0211 \)</li>
+        </ul>
+      
+        <p>Reemplazando en la fórmula:</p>
+        <p style="text-align: center;">
+          \[
+          z = \frac{0.0126 - 0.0216}{\sqrt{\frac{0.0124}{11037} + \frac{0.0211}{11034}}} \approx \frac{-0.009}{0.00174} \approx -5.19
+          \]
+        </p>
+      </section>
+
+    <!-- Conclusión -->
+    <section class="info-box">
+        <h2>Conclusión</h2>
+        <p>
+          Con un valor calculado de \( z = -5.17 \), que se encuentra fuera del rango crítico (\( z < -1.96 \) o \( z > 1.96 \)) al usar un nivel de significancia de \( \alpha = 0.05 \), se concluye que:
+        </p>
+        <p>
+          <strong>Existe suficiente evidencia estadística para rechazar la hipótesis nula.</strong> Por lo tanto, se puede afirmar que la administración de aspirina en dosis bajas tiene un efecto significativo en la reducción de infartos de miocardio no fatales en hombres sanos.
+        </p>
+      </section>
+
+    <!-- Módulo interactivo -->
+    <section class="info-box">
+      <h2>Experimenta con los datos</h2>
+      <p>Modifica los valores para calcular el valor de \( z \):</p>
+      <form id="zForm">
+        <label>n₁ (aspirina): <input type="number" id="n1" value="11037" required></label><br><br>
+        <label>x₁ (infartos con aspirina): <input type="number" id="x1" value="139" required></label><br><br>
+        <label>n₂ (placebo): <input type="number" id="n2" value="11034" required></label><br><br>
+        <label>x₂ (infartos con placebo): <input type="number" id="x2" value="239" required></label><br><br>
+        <button type="button" onclick="calcularZ()">Calcular Z</button>
+      </form>
+      <p id="resultadoZ"></p>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+</body>
+</html>

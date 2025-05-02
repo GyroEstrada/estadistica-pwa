@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Final Estadística</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+  <!-- Menú deslizante lateral -->
+  <div id="overlay-bg" class="overlay-bg" onclick="closeSidebar()"></div>
+  <nav id="sidebar" class="sidebar">
+    
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="caso1.html">Caso 1: Diferencia de medias</a></li>
+      <li><a href="caso2.html">Caso 2: Razón de varianza</a></li>
+    </ul>
+  </nav>
+  
+
+  <!-- Encabezado principal -->
+  <header>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <h1><a href="index.html" class="titulo-link">Proyecto Final Estadística</a></h1>
+    <img src="icons/UmgLogo.png" alt="Logo UMG" class="logo" />
+  </header>
+
+  <main>
+    <section class="info-box">
+      <h2>Diferencia de medias</h2>
+      <p><strong>¿Qué es la diferencia de medias?</strong><br>
+      La diferencia de medias es un concepto estadístico que cuantifica la diferencia entre los valores promedio de dos grupos. Se utiliza comúnmente en varios campos, incluida la estadística, análisis de los datos, y la ciencia de datos, para comparar las tendencias centrales de diferentes conjuntos de datos. Al calcular la diferencia de medias, los investigadores pueden evaluar si existe una disparidad significativa entre los grupos analizados, lo que puede proporcionar información sobre los fenómenos subyacentes que se están estudiando. Esta medida es particularmente útil en las pruebas de hipótesis, donde ayuda a determinar si las diferencias observadas son estadísticamente significativas o simplemente se deben al azar.</p>
+  
+      <p><strong>Cálculo de la diferencia media</strong><br>
+      Para calcular la diferencia de medias, primero se debe calcular la media (promedio) de cada grupo. La media se obtiene sumando todos los valores dentro de un grupo y luego dividiendo por el número de observaciones. Una vez establecidas las medias de ambos grupos, la diferencia de medias se calcula restando la media de un grupo de la media del otro. Matemáticamente, esto se puede expresar como: <em>Diferencia de medias = Media del grupo A – Media del grupo B</em>. Este sencillo cálculo permite a los investigadores cuantificar fácilmente la diferencia en la tendencia central entre los dos grupos considerados.</p>
+  
+      <div class="button-container">
+        <a href="caso1.html" class="btn-leer">Leer más</a>
+      </div>
+    </section>
+  
+    <section class="info-box">
+      <h2>Razón de varianzas</h2>
+      <p><strong>¿Qué es la razón de varianza?</strong><br>
+      La razón de varianza es una medida estadística que compara la varianza de dos o más conjuntos de datos para determinar si presentan una variabilidad similar. Es particularmente útil en los campos de la estadística, análisis de los datos y la ciencia de datos, donde comprender la dispersión de los puntos de datos es crucial para tomar decisiones informadas. Al calcular la relación de varianza, los analistas pueden evaluar la estabilidad relativa de diferentes conjuntos de datos, lo que puede ser esencial para probar hipótesis y validar modelos.</p>
+  
+      <p><strong>Comprensión de la varianza</strong><br>
+      La varianza en sí misma es una medida de qué tan lejos está un conjunto de números de su valor promedio. En términos matemáticos, se calcula como el promedio de las diferencias al cuadrado con respecto a la media. Una varianza más alta indica que los puntos de datos están más dispersos, mientras que una varianza más baja sugiere que están más cerca de la media. El índice de varianza aprovecha este concepto para comparar las varianzas de múltiples conjuntos de datos, lo que proporciona información sobre su variabilidad relativa.</p>
+  
+      <div class="button-container">
+        <a href="caso2.html" class="btn-leer">Leer más</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+</body>
+</html>
