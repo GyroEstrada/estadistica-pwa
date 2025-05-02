@@ -167,3 +167,15 @@ body {
     max-width: 100%;
     padding: 0.5rem 0;
   }
+
+  /* Tamaño por defecto para móviles */
+mjx-container {
+    font-size: 1.05em;
+  }
+  
+  /* Aumentar tamaño de fórmulas en pantallas grandes */
+  @media screen and (min-width: 768px) {
+    mjx-container {
+      font-size: 1.4em;
+    }
+  }
